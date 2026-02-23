@@ -1,0 +1,74 @@
+/* Reset + Basis */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+/* Layout */
+.container {
+    width: 100%;
+    max-width: 520px;
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* Input Bereich */
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 12px 14px;
+    border: 1px solid #d0d7de;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+#taskInput:focus {
+    outline: none;
+    border-color: #6ea8fe;
+}
+
+#addTaskBtn {
+    padding: 12px 14px;
+    border: none;
+    border-radius: 10px;
+    background: #2f81f7;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#addTaskBtn:hover {
+    background: #1f6feb;
+}
+
+/* Liste */
+#taskList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
