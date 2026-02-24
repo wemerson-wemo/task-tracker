@@ -10,9 +10,27 @@ function addTask() {
     return;
   }
 
+  // <li class="task-item">
   const li = document.createElement("li");
-  li.textContent = text;
+  li.classList.add("task-item");
 
+  // <span class="task-text">...</span>
+  const span = document.createElement("span");
+  span.classList.add("task-text");
+  span.textContent = text;
+
+  // <button class="delete-btn">Löschen</button>
+  const deleteBtn = document.createElement("button");
+  deleteBtn.classList.add("delete-btn");
+  deleteBtn.type = "button";
+  deleteBtn.textContent = "Löschen";
+
+  deleteBtn.addEventListener("click", () => {
+    li.remove();
+  });
+
+  li.appendChild(span);
+  li.appendChild(deleteBtn);
   taskList.appendChild(li);
 
   taskInput.value = "";

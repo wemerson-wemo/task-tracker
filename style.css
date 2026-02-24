@@ -72,3 +72,46 @@ h1 {
     flex-direction: column;
     gap: 10px;
 }
+
+/* Task Item */
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 16px;
+    color: #111827;
+    word-break: break-word;
+}
+
+/* Delete Button */
+.delete-btn {
+    border: none;
+    background: #ef4444;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+}
+
+
+
+
+
+
+
+
