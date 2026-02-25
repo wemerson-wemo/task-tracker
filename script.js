@@ -19,6 +19,10 @@ function addTask() {
   span.classList.add("task-text");
   span.textContent = text;
 
+  span.addEventListener("click", () => {
+    li.classList.toggle("completed");
+  });
+
   // <button class="delete-btn">Löschen</button>
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("delete-btn");
@@ -44,3 +48,4 @@ taskInput.addEventListener("keydown", (event) => {
     addTask();
   }
 });
+

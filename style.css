@@ -108,6 +108,11 @@ h1 {
     background: #dc2626;
 }
 
+.completed .task-text {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
 
 
 
