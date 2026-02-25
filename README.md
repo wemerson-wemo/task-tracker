@@ -20,6 +20,7 @@ praktisch zu üben.
 - ✅ Aufgaben hinzufügen
 -  🗑 Aufgaben löschen
 -  ✔ Aufgaben als erledigt markieren
+- 💾 Speicherung im Browser (LocalStorage)
 - ⌨ Unterstützung für Enter-Taste
 
 ---
@@ -29,6 +30,9 @@ praktisch zu üben.
 - Dynamisches Erstellen von HTML-Elementen mit JavaScript
 - Arbeiten mit `addEventListener`
 - Nutzung von `classList.toggle()`
+- Arbeiten mit Arrays als State
+- Nutzung vin `LocalStorage`
+- JSON.Stringify() und JSON.parse()
 - Strukturierte Git-Commits
 - Projektorganisation
 
