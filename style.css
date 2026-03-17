@@ -65,6 +65,32 @@ h1 {
     background: #1f6feb;
 }
 
+/*Filter-Section*/
+.filter-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #d0d7de;
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    background: #f3f4f6;
+}
+
+.filter-btn.active {
+    background: #1f81f7;
+    color: white;
+    border-color: #2f81f7;
+}
+
 /* Liste */
 #taskList {
     list-style: none;

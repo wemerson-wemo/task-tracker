@@ -6,6 +6,7 @@ const taskList = document.getElementById("taskList");
 
 // State
 let tasks = []; // Single Source of Truth
+let currentFilter = "all";
 
 // renderTasks()
 // Die Liste wird geleert, weil sie jedes Mal komplett neu renderst.
@@ -14,9 +15,15 @@ function renderTasks() {
 
 // task -> aktuelles Objekt
 // index -> Position im Array
-  tasks.forEach((task, index) => {
-    const li = document.createElement("li");
-    li.classList.add("task-item");
+  tasks
+    .filter((task) => {
+      if (currentFilter === "open") return !task.completed;
+      if (currentFilter === "completed") return task.completed;
+      return true;
+    })
+    .forEach((task, index) => {
+      const li = document.createElement("li");
+      li.classList.add("task-item");
 
     // Wenn die Task erledigt ist, bekommt das li eine CSS KLasse (Das ist State -> UI Mapping)
     if (task.completed) {
@@ -38,7 +45,7 @@ function renderTasks() {
     deleteBtn.textContent = "Löschen";
 
     deleteBtn.addEventListener("click", () => {
-      task.splice(index, 1); // splice entfernt 1 Element an Position index
+      tasks.splice(index, 1); // splice entfernt 1 Element an Position index
       saveTasks();
       renderTasks();
     });
@@ -91,4 +98,17 @@ taskInput.addEventListener("keydown", (event) => {
 
 loadTasks();
 renderTasks();
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    currentFilter = button.dataset.filter;
+
+    filterButtons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    renderTasks();
+  });
+});
 
