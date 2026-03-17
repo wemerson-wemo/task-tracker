@@ -22,6 +22,7 @@ praktisch zu üben.
 -  ✔ Aufgaben als erledigt markieren
 - 💾 Speicherung im Browser (LocalStorage)
 - ⌨ Unterstützung für Enter-Taste
+- 🔍 Filter für Alle / Offen / Erledigt
 
 ---
 
@@ -35,6 +36,8 @@ praktisch zu üben.
 - JSON.Stringify() und JSON.parse()
 - Strukturierte Git-Commits
 - Projektorganisation
+- Arbeiten mit `filter()`
+- verwaöten eines Filter-States
 
 ---
 
@@ -49,7 +52,5 @@ praktisch zu üben.
 
 ## 📌 Nächste Schritte
 
-- LocalStorage integrieren
-- Filter (Alle / offen / Erledigt)
 - UI weiter verbessern
 
