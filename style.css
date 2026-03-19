@@ -91,6 +91,13 @@ h1 {
     border-color: #2f81f7;
 }
 
+/*Task-Counter*/
+#taskCounter {
+    margin-bottom: 16px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
 /* Liste */
 #taskList {
     list-style: none;

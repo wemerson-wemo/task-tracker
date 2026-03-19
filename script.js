@@ -3,6 +3,7 @@
 const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
+const taskCounter = document.getElementById("taskCounter");
 
 // State
 let tasks = []; // Single Source of Truth
@@ -13,47 +14,47 @@ let currentFilter = "all";
 function renderTasks() {
   taskList.innerHTML = "";
 
-// task -> aktuelles Objekt
-// index -> Position im Array
   tasks
-    .filter((task) => {
+    .map((task, index) => ({ task, index }))
+    .filter(({ task }) => {
       if (currentFilter === "open") return !task.completed;
       if (currentFilter === "completed") return task.completed;
       return true;
     })
-    .forEach((task, index) => {
+    .forEach(({ task, index }) => {
       const li = document.createElement("li");
       li.classList.add("task-item");
 
-    // Wenn die Task erledigt ist, bekommt das li eine CSS KLasse (Das ist State -> UI Mapping)
-    if (task.completed) {
-      li.classList.add("completed")
-    }
+      if (task.completed) {
+        li.classList.add("completed");
+      }
 
-    const span = document.createElement("span");
-    span.classList.add("task-text");
-    span.textContent = task.text;
+      const span = document.createElement("span");
+      span.classList.add("task-text");
+      span.textContent = task.text;
 
-    span.addEventListener("click", () => {
-      tasks[index].completed = !tasks[index].completed;
-      saveTasks();
-      renderTasks();
+      span.addEventListener("click", () => {
+        tasks[index].completed = !tasks[index].completed;
+        saveTasks();
+        renderTasks();
+      });
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.classList.add("delete-btn");
+      deleteBtn.textContent = "Löschen";
+
+      deleteBtn.addEventListener("click", () => {
+        tasks.splice(index, 1);
+        saveTasks();
+        renderTasks();
+      });
+
+      li.appendChild(span);
+      li.appendChild(deleteBtn);
+      taskList.appendChild(li);
     });
 
-    const deleteBtn = document.createElement("button");
-    deleteBtn.classList.add("delete-btn");
-    deleteBtn.textContent = "Löschen";
-
-    deleteBtn.addEventListener("click", () => {
-      tasks.splice(index, 1); // splice entfernt 1 Element an Position index
-      saveTasks();
-      renderTasks();
-    });
-
-    li.appendChild(span);
-    li.appendChild(deleteBtn);
-    taskList.appendChild(li);
-  });
+  updateTaskCounter();
 }
 
 function addTask() {
@@ -88,6 +89,16 @@ function loadTasks() {
   }
 }
 
+function updateTaskCounter() {
+  const openTasks = tasks.filter((task) => !task.completed).length;
+
+  if (openTasks === 1) {
+    taskCounter.textContent = "1 Aufgabe offen";
+  } else {
+    taskCounter.textContent = `${openTasks} Aufgaben offen`;
+  }
+}
+
 addTaskBtn.addEventListener("click", addTask);
 
 taskInput.addEventListener("keydown", (event) => {
@@ -111,4 +122,5 @@ filterButtons.forEach((button) => {
     renderTasks();
   });
 });
+
 
