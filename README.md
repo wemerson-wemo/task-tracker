@@ -23,6 +23,7 @@ praktisch zu üben.
 - 💾 Speicherung im Browser (LocalStorage)
 - ⌨ Unterstützung für Enter-Taste
 - 🔍 Filter für Alle / Offen / Erledigt
+- 📊 Task counter showing remaining open tasks
 
 ---
 
@@ -38,6 +39,8 @@ praktisch zu üben.
 - Projektorganisation
 - Arbeiten mit `filter()`
 - verwaöten eines Filter-States
+- Updating UI based on application state
+- Counting items using Array.Filter()
 
 ---
 
