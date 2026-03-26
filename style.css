@@ -114,6 +114,18 @@ h1 {
     background: #4b5563;
 }
 
+/*EmptyState*/
+#emptyState {
+    margin-bottom: 16px;
+    color: #6b7280;
+    font-size: 14px;
+    text-align: center;
+    padding: 12px;
+    border: 1px dashed #d1d5db;
+    border-radius: 10px;
+    background: #f9fafb;
+}
+
 /* Liste */
 #taskList {
     list-style: none;

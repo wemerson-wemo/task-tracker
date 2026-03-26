@@ -4,7 +4,8 @@ const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 const taskCounter = document.getElementById("taskCounter");
-const clearCompletedBtn = document.getElementById("clearCompletedBtn")
+const clearCompletedBtn = document.getElementById("clearCompletedBtn");
+const emptyState = document.getElementById("emptyState");
 
 // State
 let tasks = []; // Single Source of Truth
@@ -14,6 +15,12 @@ let currentFilter = "all";
 // Die Liste wird geleert, weil sie jedes Mal komplett neu renderst.
 function renderTasks() {
   taskList.innerHTML = "";
+  
+  if (tasks.length === 0) {
+    emptyState.style.display = "block";
+  } else {
+    emptyState.style.display ="none";
+  }
 
   tasks
     .map((task, index) => ({ task, index }))
