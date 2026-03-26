@@ -4,6 +4,7 @@ const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 const taskCounter = document.getElementById("taskCounter");
+const clearCompletedBtn = document.getElementById("clearCompletedBtn")
 
 // State
 let tasks = []; // Single Source of Truth
@@ -106,6 +107,12 @@ taskInput.addEventListener("keydown", (event) => {
     addTask();
   }
 });
+
+clearCompletedBtn.addEventListener("click", () => {
+  tasks = tasks.filter((task) => !task.completed);
+  saveTasks();
+  renderTasks();
+})
 
 loadTasks();
 renderTasks();
