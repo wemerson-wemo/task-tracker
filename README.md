@@ -28,6 +28,7 @@ praktisch zu üben.
 - ⌨ Unterstützung für Enter-Taste
 - 🔍 Filter für Alle / Offen / Erledigt
 - 📊 Task counter showing remaining open tasks
+- 🧹 Clear all completed tasks with one click
 
 ---
 
@@ -45,6 +46,7 @@ praktisch zu üben.
 - verwaöten eines Filter-States
 - Updating UI based on application state
 - Counting items using Array.Filter()
+- Removing multiple items from an array with Array.filter()
 
 ---
 
